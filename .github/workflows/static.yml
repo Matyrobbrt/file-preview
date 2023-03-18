@@ -43,7 +43,7 @@ jobs:
       - name: Build website
         run: npm run build
       - name: Commit website
-        run: git config advice.addIgnoredFile false && git add dist && git commit -m 'Add commit'
+        run: git add -f dist && git commit -m 'Add commit'
       - name: Push website
         run: git subtree push --prefix dist origin gh-pages
       # - name: Upload artifact

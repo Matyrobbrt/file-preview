@@ -1,5 +1,4 @@
-// importScripts("https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js")
-import hljs from "highlight.js"
+import hljs from 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js'
 onmessage = (event) => {
     try {
         const lang = event.data[1];

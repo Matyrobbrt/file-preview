@@ -53,9 +53,7 @@ export default {
 </script>
 
 <template>
-  <pre v-if="raw" style="padding: 2.5px">
-    {{text}}
-  </pre>
+  <pre v-if="raw" style="padding: 2.5px">{{text}}</pre>
   <header v-if="!raw">
     <button class="hljs" @click="redirectWithParams(params => params.set('raw', true))">View raw</button>
     <label for="themes" class="hljs" style="padding-left: 2px">Select a theme: </label>

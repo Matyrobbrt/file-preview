@@ -1,4 +1,4 @@
-import hljs from 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/es/highlight.min.js'
+import hljs from './highlight.min'
 onmessage = (event) => {
     try {
         const lang = event.data[1];

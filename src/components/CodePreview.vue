@@ -32,7 +32,7 @@ export default {
       if (language === 'txt' || language === 'log') {
         this.highlightHtml = this.lines
       } else {
-        const worker = new Worker('./worker.js', {type: 'module'});
+        const worker = new Worker('./worker.js');
         worker.onmessage = (event) => {
           if (event.data === null) {
             onerr()

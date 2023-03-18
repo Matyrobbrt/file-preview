@@ -45,7 +45,7 @@ jobs:
       - name: Commit website
         run: git add dist && git commit -m 'Add commit'
       - name: Push website
-        run: git subtree push --prefix dist origin gh-pages
+        run: git config advice.addIgnoredFile false && git subtree push --prefix dist origin gh-pages
       # - name: Upload artifact
       #  uses: actions/upload-pages-artifact@v1
       #  with:

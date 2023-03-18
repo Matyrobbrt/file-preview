@@ -29,7 +29,7 @@ export default {
       if (language === 'kts') {
         language = 'kt'
       }
-      if (language === 'txt' || language === 'log') {
+      if (language === 'txt') {
         this.highlightHtml = this.lines
       } else {
         const worker = new Worker('./worker.js');

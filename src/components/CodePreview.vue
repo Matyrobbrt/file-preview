@@ -75,6 +75,10 @@ export default {
   text-align: center;
   padding-right: 3.5px;
   border-right: 1px solid #CCC;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .hljs-ln-line {

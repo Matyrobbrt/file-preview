@@ -49,6 +49,9 @@ export default {
   methods: {
     updateLang(event) {
       this.lang = document.getElementById('lang').value
+    },
+    toggleLW() {
+      this.$refs.preview.toggleLineWrap()
     }
   }
 }
@@ -67,7 +70,7 @@ export default {
     <input type="text" class="hljs" v-on:keyup.enter="updateLang" id="lang"/>
 
     <label for="should-lw" class="hljs" style="padding-left: 5px">Wrap lines: </label>
-    <input type="checkbox" class="hljs" @click="this.$refs.preview.toggleLineWrap()" id="should-lw" />
+    <input type="checkbox" class="hljs" @click="toggleLW()" id="should-lw" />
   </header>
   <CodePreview :code="text" :lang="lang" v-if="!raw" ref="preview"/>
   <hr v-if="!raw"/>

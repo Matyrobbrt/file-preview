@@ -64,6 +64,8 @@ export default {
     <input type="text" class="hljs" v-on:keyup.enter="updateLang" id="lang"/>
   </header>
   <CodePreview :code="text" :lang="lang" v-if="!raw"/>
+  <hr />
+  <footer>© Matyrobbrt 2023, under the MIT license - <a href="https://github.com/Matyrobbrt/file-preview">GitHub</a></footer>
 </template>
 <style scoped>
 select {
@@ -81,5 +83,13 @@ button {
 }
 header {
   padding: 3px
+}
+
+footer {
+  display: table;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
 }
 </style>

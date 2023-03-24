@@ -1,5 +1,5 @@
 <script setup>
-import FilePreview from "@/components/FilePreview.vue";
+import FilePreview from "@/pages/FilePreview.vue";
 import LoadingVue from 'vue3-loading-overlay';
 </script>
 

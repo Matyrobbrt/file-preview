@@ -34,7 +34,7 @@ export default {
       lang: optional(up().get('lang'))
           .or(() => {
             const furl = getDiscordFileURL(up())
-            return furl === null ? null : furl.substring(furl.lastIndexOf('.') + 1)
+            return furl === null ? 'plaintext' : furl.substring(furl.lastIndexOf('.') + 1)
           })
           .or(() => 'auto')
           .get

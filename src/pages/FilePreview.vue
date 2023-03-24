@@ -41,8 +41,10 @@ export default {
     }
   },
   mounted() {
-    setupTheme()
-    this.selectedTheme = getTheme()
+    if (this.params.get('raw') === null) {
+      setupTheme()
+      this.selectedTheme = getTheme()
+    }
   },
   methods: {
     updateLang(event) {
@@ -68,8 +70,8 @@ export default {
     <input type="checkbox" class="hljs" @click="this.$refs.preview.toggleLineWrap()" id="should-lw" />
   </header>
   <CodePreview :code="text" :lang="lang" v-if="!raw" ref="preview"/>
-  <hr />
-  <footer>© Matyrobbrt 2023, under the MIT license - <a href="https://github.com/Matyrobbrt/file-preview">GitHub</a></footer>
+  <hr v-if="!raw"/>
+  <footer v-if="!raw">© Matyrobbrt 2023, under the MIT license - <a href="https://github.com/Matyrobbrt/file-preview">GitHub</a></footer>
 </template>
 <style scoped>
 select {

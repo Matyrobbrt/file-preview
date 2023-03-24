@@ -8,7 +8,7 @@ const urlParams = up()
 const raw = urlParams.get('raw') !== null
 
 const fileUrl = getDiscordFileURL(urlParams)
-const text = await (fileUrl == null ? Promise.resolve('Please provide a file URL!') : axios.get(`https://corsbad.matyrobbrt.com?url=${encodeURIComponent(fileUrl)}`, {
+const text = await (fileUrl == null ? Promise.resolve("Please provide a file URL via the 'url' search parameter!!") : axios.get(`https://corsbad.matyrobbrt.com?url=${encodeURIComponent(fileUrl)}`, {
   headers: {
     Accept: 'text/plain',
   },

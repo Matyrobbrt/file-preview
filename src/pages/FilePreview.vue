@@ -60,10 +60,14 @@ export default {
     <select name="themes" id="themes" class="hljs" @change="setTheme($event.target.value, true)">
       <option v-for="theme in THEMES" :value="theme" class="hljs" :selected="selectedTheme === theme">{{theme}}</option>
     </select>
+
     <label for="lang" class="hljs" style="padding-left: 5px">Language: </label>
     <input type="text" class="hljs" v-on:keyup.enter="updateLang" id="lang"/>
+
+    <label for="should-lw" class="hljs" style="padding-left: 5px">Wrap lines: </label>
+    <input type="checkbox" class="hljs" @click="this.$refs.preview.toggleLineWrap()" id="should-lw" />
   </header>
-  <CodePreview :code="text" :lang="lang" v-if="!raw"/>
+  <CodePreview :code="text" :lang="lang" v-if="!raw" ref="preview"/>
   <hr />
   <footer>© Matyrobbrt 2023, under the MIT license - <a href="https://github.com/Matyrobbrt/file-preview">GitHub</a></footer>
 </template>
@@ -91,5 +95,6 @@ footer {
   margin-left: auto;
   margin-right: auto;
   font-size: 14px;
+  margin-block: 0.45em;
 }
 </style>

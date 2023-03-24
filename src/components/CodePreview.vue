@@ -46,6 +46,14 @@ export default {
         worker.postMessage([this.code, language])
       }
     },
+    toggleLineWrap() {
+      const table = document.getElementById('code-table')
+      if (table.classList.contains('line-wrap')) {
+        table.classList.remove('line-wrap')
+      } else {
+        table.classList.add('line-wrap')
+      }
+    }
   },
   watch: {
     lang(val) {
@@ -58,7 +66,7 @@ export default {
 </script>
 
 <template>
-  <table class="hljs-ln hljs" cellspacing="0">
+  <table class="hljs-ln hljs" cellspacing="0" id="code-table">
     <tbody>
     <tr v-for="(item, index) in lines" :id="'L' + (index + 1)">
       <td class="hljs-ln-numbers"><a :href="'#L' + (index + 1)">{{ index + 1 }}</a></td>
@@ -88,6 +96,7 @@ export default {
 
 table {
   border-spacing: 3px;
+  /* border: 1px solid #CCC; TODO - reconsider in the future */
 }
 
 a {
@@ -97,5 +106,13 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.line-wrap .code {
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 </style>

@@ -4,6 +4,8 @@ plugins {
   id 'com.github.johnrengelman.shadow' version '8.1.0'
 }
 
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+
 group = 'com.matyrobbrt.corsbad'
 
 application {
